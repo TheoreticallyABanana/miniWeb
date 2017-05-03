@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426021943) do
+ActiveRecord::Schema.define(version: 20170502064657) do
+
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "course_num"
+    t.string   "course_name"
+    t.text     "course_info", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name"
@@ -25,7 +33,10 @@ ActiveRecord::Schema.define(version: 20170426021943) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "course_id"
+    t.index ["course_id"], name: "index_users_on_course_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "users", "courses"
 end
