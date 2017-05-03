@@ -4,7 +4,7 @@
 	<div><%= message %></div>
 <% end %>
 
-<div>
+<div id="sessionsDIV">
 	<%= form_for :session, url: login_path do |f| %>
 		<%= f.label :email %>
 		<%= f.email_field :email %>
