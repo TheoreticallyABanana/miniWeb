@@ -1,3 +1,3 @@
 class Unit < ApplicationRecord
-  belongs_to :courses
+  belongs_to :course
 end

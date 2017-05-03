@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20170503012415) do
   end
 
   create_table "units", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "courses_id"
+    t.integer  "course_id"
     t.string   "unit_name"
     t.text     "unit_info",  limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["courses_id"], name: "index_units_on_courses_id", using: :btree
+    t.index ["course_id"], name: "index_units_on_course_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -47,6 +47,6 @@ ActiveRecord::Schema.define(version: 20170503012415) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
-  add_foreign_key "units", "courses", column: "courses_id"
+  add_foreign_key "units", "courses"
   add_foreign_key "users", "courses"
 end

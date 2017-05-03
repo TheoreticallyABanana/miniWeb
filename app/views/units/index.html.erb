@@ -15,7 +15,7 @@
   <tbody>
     <% @units.each do |unit| %>
       <tr>
-        <td><%= unit.courses %></td>
+        <td><%= unit.course.course_name %></td>
         <td><%= unit.unit_name %></td>
         <td><%= unit.unit_info %></td>
         <td><%= link_to 'Show', unit %></td>
