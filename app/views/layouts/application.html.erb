@@ -8,7 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<header class="navbar navbar-fixed-top navbar-inverse">
+<body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
   <% if logged_in? %>
     <h1 id="Welcome">Welcome, <%= current_user.name %>!</h1>
       <nav>
@@ -24,14 +25,14 @@
         <div id="logTag"><%= link_to "Log In", login_path %></div>
       </nav>    
   <% end %>
-</header>
-<body>
-    
+  </header>
+
     <div class="container" id="mainContent">
       <%= yield %>
     </div>
-    <div id="footer">
+
+    <footer class="footer">
     <p class="text-muted">Logo plus school name</p>
-    </div>
+    </footer>
 </body>
 </html>
