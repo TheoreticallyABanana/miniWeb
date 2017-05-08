@@ -8,26 +8,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <% if logged_in? %>
-        <h1 id="Welcome">Welcome, <%= current_user.name %>!</h1>
-          <nav>
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Courses", course_path %></li>
-              <li><%= link_to "Units", units_path %></li>
-              <li><%= link_to "Log Out", logout_path, method: :delete %></li>
-            </ul>
-          </nav>
-      <% else %>
-        <h1 id="Welcome2">Welcome!, Please log in</h1>
-          <nav>
-            <%= link_to "Log In", login_path %>
-          </nav>    
-      <% end %>
-    </header>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <% if logged_in? %>
+    <h1 id="Welcome">Welcome, <%= current_user.name %>!</h1>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%# link_to "course", course_path %></li>
+          <li><%= link_to "Units", units_path %></li>
+          <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+        </ul>
+      </nav>
+  <% else %>
+    <h1 id="Welcome2">Welcome!, Please log in</h1>
+      <nav>
+        <div id="logTag"><%= link_to "Log In", login_path %></div>
+      </nav>    
+  <% end %>
+</header>
+<body>
+    
     <div class="container" id="mainContent">
       <%= yield %>
     </div>
-  </body>
+    <div id="footer">
+    <p class="text-muted">Logo plus school name</p>
+    </div>
+</body>
 </html>

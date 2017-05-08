@@ -1,13 +1,69 @@
 #Welcome
 {
 	float:left;
+	padding-left:5%;
+}
+#Welcome2
+{
+	padding-left:5%;
+	float:left;
+	color:#ffffff;
 }
 #mainContent
 {
-	float:left;
-
+	padding-top:10%;
+	min-height: 800px;
+	margin:0 0 80px;
 }
 #sessionsDIV
 {
-	float:left;
+	padding-left:30%;
+}
+#logTag
+{
+	float:right;
+	padding-right:5%;
+	padding-top:20px;
+	text-decoration: none;
+}
+#logTag a
+{
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration: none;
+}
+#logTitle
+{
+	text-align: center;
+}
+#footer
+{
+	position: absolute;
+	height: 80px;
+	background-color:#222;
+	color:#ffffff;
+	width:100%;
+}
+ul
+{
+	list-style-type:none;
+	margin: 0 auto;
+	overflow:hidden;
+}
+li
+{
+	float:right;
+	width:10%;
+}
+li a
+{
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration: none;
+}
+nav
+{
+	text-decoration: none;
 }
