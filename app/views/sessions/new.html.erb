@@ -1,4 +1,4 @@
-<h1>Log In Page</h1>
+<h1 id="logMessage">Log In Page</h1>
 
 <% flash.each do |message_type, message| %>
 	<div><%= message %></div>
@@ -6,12 +6,18 @@
 
 <div>
 	<%= form_for :session, url: login_path do |f| %>
+	<div class="field" id="emailField">
 		<%= f.label :email %>
 		<%= f.email_field :email %>
+	</div>
 
+	<div class="field" id="passwordField">
 		<%= f.label :password %>
 		<%= f.password_field :password %>
+	</div>
 
+	<div class="actions" id="submitB">
 		<%= f.submit "Log in" %>
+	</div>
 	<% end %>
 </div>

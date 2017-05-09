@@ -8,15 +8,31 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  	<% if logged_in? %>
-  		<h1>Welcome, <%= current_user.name %>!</h1>
-  		<%= link_to "Users", users_path %>
-  		<%= link_to "Log Out", logout_path, method: :delete %>
- 	<% else %>
- 		<%= link_to "Log In", login_path %>
- 	<% end %>
+<body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+  <% if logged_in? %>
+    <h1 id="Welcome">Welcome, <%= current_user.name %>!</h1>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%# link_to "course", course_path %></li>
+          <li><%= link_to "Units", units_path %></li>
+          <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+        </ul>
+      </nav>
+  <% else %>
+    <h1 id="Welcome2">Welcome!, Please log in</h1>
+      <nav>
+        <div id="logTag"><%= link_to "Log In", login_path %></div>
+      </nav>    
+  <% end %>
+  </header>
 
-    <%= yield %>
-  </body>
+    <div class="container" id="mainContent">
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+    <p class="text-muted">Logo plus school name</p>
+    </footer>
+</body>
 </html>
