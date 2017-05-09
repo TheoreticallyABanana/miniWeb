@@ -13,8 +13,8 @@
   <% if logged_in? %>
     <h1 id="Welcome">Welcome, <%= current_user.name %>!</h1>
       <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%# link_to "course", course_path %></li>
+        <ul>
+          <li><%= link_to "course", course_path(current_user.course_id) %></li>
           <li><%= link_to "Units", units_path %></li>
           <li><%= link_to "Log Out", logout_path, method: :delete %></li>
         </ul>
